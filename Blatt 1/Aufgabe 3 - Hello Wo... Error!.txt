@@ -1,0 +1,61 @@
+Aufgabe 3 - Hello Wo... Error!
+------------------------------
+
+(a)
+compiling: Error
+	"HelloWorld.java:1: error: class HellWorld is public, should be declared in a file named HellWorld.java
+	public class HellWorld {
+		   ^
+	1 error"
+
+	(would work if the class is not declared public, but then we have to call the class file with the new name with a missing letter)
+	
+	
+(b)
+public: 
+	compiling:
+		OK
+	running:
+		Error: Main method not found in class HelloWorld, please define the main method as:
+   		public static void main(String[] args)
+		or a JavaFX application class must extend javafx.application.Application
+
+static:
+	compiling:
+		OK
+	running:
+		Error: Main method is not static in class HelloWorld, please define the main method as:
+		public static void main(String[] args)
+
+void:
+	compiling: Error
+		HelloWorld.java:3: error: invalid method declaration; return type required
+		public static main (String[] args) {
+	    	          ^
+	    1 error
+	
+	
+(c)
+					Compiling	Running
+public static void:	OK			OK
+public void static:	Error		-
+static public void:	OK			OK
+static void public:	Error		-
+void static public:	Error		-
+void public static:	Error		-
+
+	
+(d)
+public static void main ([]String args): Error
+public static void main (String[] args): OK
+public static void main (String []args): OK
+public static void main (String args[]): OK
+
+
+
+
+
+
+
+
+	
