@@ -76,8 +76,7 @@ class BubbleSortVisual {
 	public static void drawSingleBar(int startX, int value) {
 		for (int x = startX; x < startX + getSingleBarWidth(); x++) {
 			for (int y = (height - 1) - value; y < height; y++) {
-				window.setPixel(x, y, (value*2), 0, 254-(value*2));
-				//System.out.println("Set pixel at (" + x + ", " + y + ").");
+				window.setPixel(x, y, (value), 0, 254-(value));
 			}
 		}
 	}
