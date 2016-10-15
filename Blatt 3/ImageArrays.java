@@ -14,10 +14,10 @@ public class ImageArrays {
 		//redraw to see the image
 		sourceWindow.redraw();
 		
-		// Create an Array with the needed size.
+		// a) Create an Array with the needed size.
 		int[] imageData = new int[500*500*3];
 		
-		// Fill the Array with RGB Information (first all 250000 Red values, then all Green and then all Blue values).
+		// b) Fill the Array with RGB Information (first all 250000 Red values, then all Green and then all Blue values).
 		for (int x = 0; x < 500; x++) {
 			for (int y = 0; y < 500; y++) {
 				imageData[0*500*500 + x*500 + y] = sourceWindow.getPixelRed(x, y);
@@ -28,11 +28,11 @@ public class ImageArrays {
 		}
 		
 		
-		//create & open the second windo (to draw your copy into)
+		// c) Create & open the second window (to draw your copy into)
 		ImageWindow destinationWindow = new ImageWindow(500,500);
 		destinationWindow.openWindow("Image rotated by 90 degree",550,0);
 		
-		// Writes the Data rotated by 90° Clockwise.
+		// c) Writes the Data rotated by 90° Clockwise.
 		for (int x = 0; x < 500; x++) {
 			for (int y = 0; y < 500; y++) {
 				int xPos = 500 - 1 - y;
@@ -44,33 +44,31 @@ public class ImageArrays {
 			}
 		}
 
-		// redraw to see the changed image
+		// c) Redraw to see the changed image
         destinationWindow.redraw();
 		
-		// Create another output window
+		// d) Create another output window
 		ImageWindow destinationWindow2 = new ImageWindow(500,500);
 		destinationWindow2.openWindow("Image with permuted color channels",0,550);
-
-
-
-		/*  TODO: call here your function which permutes the color channels
-		 */
-
-
-
-		// redraw to see the changed image
+		
+		// d) Call the function
+		changeColorChannels(destinationWindow2, imageData);
+		
+		// d) redraw to see the changed image
 		destinationWindow2.redraw();
 	}
-
-
-	/*  TODO: implement here the function to rotate the color channels.
-	 *  HINT: think about the arguments you need for the function.
-	 */
-
+	
+	
+	// d) Function to change the color channels according to the ex d)
 	public static void changeColorChannels(ImageWindow window, int[] data) {
-		
+		for (int x = 0; x < 500; x++) {
+			for (int y = 0; y < 500; y++) {			
+				int red   = data[0*500*500 + x      *500 + (499-y)];
+				int green = data[1*500*500 + (499-x)*500 + y      ];
+				int blue  = data[2*500*500 + (499-y)*500 + (499-x)];
+				window.setPixel(x, y, red, green, blue);
+			}
+		}
 	}
-
-
 
 }
