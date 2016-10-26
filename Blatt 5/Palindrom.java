@@ -43,7 +43,7 @@ public class Palindrom {
 				// The character is an uppercse letter. Add the Unicode difference between upper- and lowercase letters to the letter to get the lowercase one and then add it to our String.
 				out += (characters[i] + ('a' - 'A'));
 			}
-			// the caracter is no letter, ignore it.
+			// the character is no letter, ignore it.
 		}
 		return out.toCharArray();
 	}
