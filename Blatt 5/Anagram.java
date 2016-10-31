@@ -5,9 +5,11 @@ public class Anagram {
 	
 	public static boolean testAnagramm(String text1, String text2) {
 		
+		int alphabetLength = 26;
+		
 		// This is to count the chars in the texts (letters[0] stands for 'a', 1 for 'b' …
-		int[] letters1 = new int[24];
-		int[] letters2 = new int[24];
+		int[] letters1 = new int[alphabetLength];
+		int[] letters2 = new int[alphabetLength];
 		
 		char[] chars1 = editText(text1);
 		char[] chars2 = editText(text2);
@@ -25,7 +27,7 @@ public class Anagram {
 		}
 		
 		// This checks, whether the two arrays contain the same values or not
-		for (int i = 0; i < 24; i++) {
+		for (int i = 0; i < alphabetLength; i++) {
 			if (letters1[i] != letters2[i]) {
 				return false;
 			}
