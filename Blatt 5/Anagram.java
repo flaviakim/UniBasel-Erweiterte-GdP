@@ -58,7 +58,11 @@ public class Anagram {
 	
 	public static void main (String[] args) {
 		
-		testAnagramm(args[0], args[1]);
+		if (testAnagramm(args[0], args[1])) {
+			System.out.println("Text ist ein Anagramm!");
+		} else {
+			System.out.println("Text ist KEIN Anagramm!");
+		}
 		
 	}
 	
