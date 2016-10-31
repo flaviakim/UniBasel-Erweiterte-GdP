@@ -5,12 +5,12 @@ public class Anagram {
 	
 	public static boolean testAnagramm(String text1, String text2) {
 		
-		int alphabetLength = 26;
+		final int alphabetLength = 26;
 		
 		// This is to count the chars in the texts (letters[0] stands for 'a', 1 for 'b' …
 		int[] letters1 = new int[alphabetLength];
 		int[] letters2 = new int[alphabetLength];
-		
+				
 		char[] chars1 = editText(text1);
 		char[] chars2 = editText(text2);
 		
@@ -59,9 +59,9 @@ public class Anagram {
 	public static void main (String[] args) {
 		
 		if (testAnagramm(args[0], args[1])) {
-			System.out.println("Text ist ein Anagramm!");
+			System.out.println("Texte sind ein Anagramm!");
 		} else {
-			System.out.println("Text ist KEIN Anagramm!");
+			System.out.println("Texte sind KEIN Anagramm!");
 		}
 		
 	}

@@ -42,7 +42,6 @@ public class Palindrom {
 			} else if (characters[i] >= 'A' && characters[i] <= 'Z') {
 				// The character is an uppercse letter. Add the Unicode difference between upper- and lowercase letters to the letter to get the lowercase one and then add it to our String.
 				out += (char)(characters[i] + ('a' - 'A'));
-				
 			}
 			// the character is no letter, ignore it.
 		}
