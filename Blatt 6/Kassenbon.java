@@ -52,6 +52,7 @@ public class Kassenbon {
 	 *	Returns the total price as a String.
 	 */
 	public String total() {
+		// TODO: Calculate Total
 		return "28.30";
 	}
 	
