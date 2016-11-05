@@ -126,7 +126,7 @@ public class Genom {
     public void insertion() {
     	
     	if (aminoAcids.length >= 10) {
-    		// Es soll nie weniger als 1 Aminosäure geben. Mutation Abbrechen.
+    		// Es soll nie mehr als 10 Aminosäuren geben. Mutation Abbrechen.
     		return;
     	}
     	
