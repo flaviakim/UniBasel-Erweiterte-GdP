@@ -8,6 +8,20 @@ public class KochWalk {
 		
 		// Aufgabe 2a)
 		
+		int depth = Integer.parseInt(args[0]);
+		
+		ImageWindow window = new ImageWindow(500, 500);
+		Walker walker = new Walker(window);
+		
+		window.openWindow("Koch Walk " + depth);
+		walker.pressBallPen();
+		
+		walker.setPos(5.0, 200.0);
+		walker.setDir(1.0, 0.0);
+		
+		walk (depth, 400, walker);
+		
+		/* alter Code mit mehrerer Fenstern gleichzeitig.
 		int count = 3;
 		
 		ImageWindow[] windows = new ImageWindow[count];
@@ -24,7 +38,7 @@ public class KochWalk {
 			walkers[i].setDir(1.0, 0.0);
 			
 			walk(i+1, 500, walkers[i]);
-		}
+		}*/
 		
 		// Aufgabe 2b)
 		

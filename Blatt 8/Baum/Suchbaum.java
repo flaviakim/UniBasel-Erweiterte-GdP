@@ -153,6 +153,7 @@ public class Suchbaum {
 					continue;
 				}
 			}
+			
 		}
 	}
 	
