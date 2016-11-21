@@ -8,18 +8,24 @@ public class KochWalk {
 		
 		// Aufgabe 2a)
 		
-		int depth = Integer.parseInt(args[0]);
+		int depth;
 		
-		ImageWindow window = new ImageWindow(500, 500);
-		Walker walker = new Walker(window);
+		if (args.length != 1) {
+			depth = 3;
+		} else {
+			depth = Integer.parseInt(args[0]);
+		}
 		
-		window.openWindow("Koch Walk " + depth);
-		walker.pressBallPen();
+		ImageWindow windowA = new ImageWindow(500, 500);
+		Walker walkerA = new Walker(windowA);
 		
-		walker.setPos(5.0, 200.0);
-		walker.setDir(1.0, 0.0);
+		windowA.openWindow("Koch Walk " + depth);
+		walkerA.pressBallPen();
 		
-		walk (depth, 400, walker);
+		walkerA.setPos(5.0, 200.0);
+		walkerA.setDir(1.0, 0.0);
+		
+		walk (depth, 400, walkerA);
 		
 		/* alter Code mit mehrerer Fenstern gleichzeitig.
 		int count = 3;
@@ -42,24 +48,25 @@ public class KochWalk {
 		
 		// Aufgabe 2b)
 		
-		ImageWindow window = new ImageWindow(600, 700);
-		Walker walker = new Walker(window);
+		ImageWindow windowB = new ImageWindow(600, 700);
+		Walker walkerB = new Walker(windowB);
 		
-		window.openWindow("Schneeflocke");
-		walker.pressBallPen();
+		windowB.openWindow("Schneeflocke");
+		walkerB.pressBallPen();
 		
-		walker.setPos(0.0, 150.0);
-		walker.setDir(1.0, 0.0);
+		walkerB.setPos(0.0, 150.0);
+		walkerB.setDir(1.0, 0.0);
 		
-		snowflake(walker);
+		snowflake(walkerB);
 		
 	}
 	
 	
 	
 	static void walk (int depth, double length, Walker walker) {
-		// Depth has to be at least 1.
+		// Depth has to be at least 1 and max 5.
 		if (depth < 1) return;
+		if (depth > 5) return;
 		
 		if (depth ==  1) {
 			walker.move(length/3);
@@ -83,11 +90,11 @@ public class KochWalk {
 	
 	
 	static void snowflake (Walker walker) {
-		walk (3, 500, walker);
+		walk (5, 500, walker);
 		walker.turn(120);
-		walk (3, 500, walker);
+		walk (5, 500, walker);
 		walker.turn(120);
-		walk (3, 500, walker);
+		walk (5, 500, walker);
 	}
 	
 	
